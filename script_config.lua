@@ -1,12 +1,16 @@
 table.insert(Config.scriptsConfig, {
 
     levelConfig = {
-		webhookLevelUp = "",  -- Webhook onde sairá todos os players que passaram de level
-		webhookLevelRewards = "",  -- Webhook onde sairá todos os prêmios recebidos pelos players
-		webhookLevelSalary = "",  -- Webhook onde sairá todos os salarios recebidos pelos players
+		webhookLevelUp = "",  -- Webhook onde sairá todos os players que passaram de level.
+		webhookLevelRewards = "",  -- Webhook onde sairá todos os prêmios recebidos pelos players.
+		webhookLevelRewardsExpiration = "",  -- Webhook onde sairá todos os prêmios expirados dos players.
+		webhookLevelSalary = "",  -- Webhook onde sairá todos os salarios recebidos pelos players.
 
-		enableMigration = false,  -- Defina como (true) para ativar a migração do antigo banco de dados e (false) para desativar.
-		getIdOnlyAfterSpawn = false,  -- Defina como (true) para obter id somente após o spawn, ultil para servidores com multi caracter onde o player pode ter varios ids.
+		getIdOnlyAfterSpawn = true,  -- Defina como (true) para obter id somente após o spawn, ultil para servidores com multi caracter onde o player pode ter varios ids.
+		expirationSystem = true,  -- Defina como (true) para habilitar o sistema de expiração, esse sistema ira verificar as datas dos premios e os removera caso esteja expirada.
+		timeCheckExpiration = 1,  -- Defina como o tempo em horas que o script ira verificar os premios expirados.
+
+		rewardNotifyTime = 60,  -- Defina o tempo da notificação que mostra os premios em segundos.
 
 		logoDesactiveActive = 'iron:desactivelogo',  -- Evento para esconder a hud.
 		logoActive = 'iron:activelogo',  -- Evento para mostrar a hud novamente.
@@ -90,6 +94,23 @@ table.insert(Config.scriptsConfig, {
 
 		prizesList = {  -- Crie as premiações de cada level desejado abaixo.
 			{
+				curLevel = 5,  -- Level em que a premiação será dada.
+				-- randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
+				-- group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
+				permissions = {"police.permissao","FBI.permissao"},
+				money = 10000,  -- dinheiro que o player irá receber ao chegar no level especificado.
+				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
+				--	{item = 'maconha', value = 50},
+				--	{item = 'dinheirosujo', value = 1000000},
+				--},
+
+				---Expiração-----
+				-- expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
+				-- days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
+
+			},
+			{
 				curLevel = 10,  -- Level em que a premiação será dada.
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
@@ -100,8 +121,24 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
+				days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
+
+			},
+			{
+				curLevel = 280,  -- Level em que a premiação será dada.
+				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
+				group = "Supreme",  -- Grupo que o player irá receber ao chegar no level especificado.
+				money = 666,  -- dinheiro que o player irá receber ao chegar no level especificado.
+				specifyCars = {"adder","furia"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
+				itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
+					{item = 'maconha', value = 50},
+					{item = 'dinheirosujo', value = 1000000},
+				},
+
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -116,8 +153,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 15,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -132,8 +169,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 30,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -148,8 +185,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 30,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -164,8 +201,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 30,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -180,8 +217,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 30,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -196,8 +233,8 @@ table.insert(Config.scriptsConfig, {
 				--	{item = 'dinheirosujo', value = 1000000},
 				--},
 
-				-----Fivem Store-----
-				fStore = true,  -- Caso tenha o script da fivem store ative esta opção para carros e grupos serem removidos automaticamente após os dias especificados abaixo.
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
 				days = 30,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
@@ -209,6 +246,7 @@ table.insert(Config.scriptsConfig, {
 		commands = {
 			level = "nivel",
 			levelCheck = "vernivel",
+			rewards = "premios",
 		},
 
 		webhook = {
@@ -229,6 +267,11 @@ table.insert(Config.scriptsConfig, {
 			rewardsFor = "Por",
 			rewardsDays = "Dias",
 			rewardsLevel = "Por alcançar o level",
+			rewardsExpiration = "[Sistema de expiração]",
+			hadHis = "Teve o seu",
+			vehicle = "Veiculo:",
+			group = "Grupo:",
+			Expired = "Expirado.",
 		},
 
 		chat = {
@@ -246,12 +289,18 @@ table.insert(Config.scriptsConfig, {
 			getLevelError2 = "Você deve especificar um passaporte.",
 			salary = "Seu salario caiu na conta! Valor recebido:",
 			salaryJobs = "Empregos:",
+			noReward = "Sem premios!",
+			vehicle = "Veiculo:",
+			group = "Grupo:",
+			expireDate = "Expira em:",
+			day = "Dia:",
+			month = "Mês:",
+			year = "Ano:",
+			minute = "Minuto:",
+			hour = "Hora:",
 		},
 
 		console = {
-			migratedPlayerId = "Id:",
-			migratedPlayer = "Teve seu nível migrado para o novo sistema!",
-			migratedPlayerSeconds = "nível em segundos:",
 			startLevelMensage1 = "Sistema de premiação não identificado, Criando...",
 			startLevelMensage2 = "Sistema de premiação criado no banco de dados!",
 			startLevelError = "Erro no sistema de premiação relogue! Se persistir contate a equipe DEV!!",
@@ -262,6 +311,7 @@ table.insert(Config.scriptsConfig, {
 		commands = {
 			level = "level",
 			levelCheck = "levelCheck",
+			rewards = "rewards",
 		},
 
 		webhook = {
@@ -282,6 +332,11 @@ table.insert(Config.scriptsConfig, {
 			rewardsFor = "Per",
 			rewardsDays = "Days",
 			rewardsLevel = "for reaching the level",
+			rewardsExpiration = "[Sistema de expiração]",
+			hadHis = "Had his",
+			vehicle = "Vehicle:",
+			group = "Group:",
+			Expired = "Expired.",
 		},
 
 		chat = {
@@ -299,12 +354,18 @@ table.insert(Config.scriptsConfig, {
 			getLevelError2 = "You must specify a passport.",
 			salary = "Your salary has dropped into your account! value received:",
 			salaryJobs = "Jobs:",
+			noReward = "No rewards!",
+			vehicle = "Vehicle:",
+			group = "Group:",
+			expireDate = "Expires in:",
+			day = "Day:",
+			month = "Month:",
+			year = "Year:",
+			minute = "Minute:",
+			hour = "Hour:",
 		},
 
 		console = {
-			migratedPlayerId = "Id:",
-			migratedPlayer = "Had your level migrated to the new system!",
-			migratedPlayerSeconds = "level in seconds:",
 			startLevelMensage1 = "Unidentified reward system, Creating...",
 			startLevelMensage2 = "Awards system created in the database!",
 			startLevelError = "reconnect please, reward system error! If it persists, contact the DEV team!!",
