@@ -94,10 +94,26 @@ table.insert(Config.scriptsConfig, {
 
 		prizesList = {  -- Crie as premiações de cada level desejado abaixo.
 			{
-				curLevel = 5,  -- Level em que a premiação será dada.
+				-- curLevel = 0,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
+				-- randomCar = false,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
+				-- group = "cidadao",  -- Grupo que o player irá receber ao chegar no level especificado.
+				-- money = 5000,  -- dinheiro que o player irá receber ao chegar no level especificado.
+				-- specifyCars = {"faggio"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
+				-- itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
+				-- 	{item = 'agua', value = 1},
+				-- 	{item = 'hamburguer', value = 1},
+				-- },
+
+				-- ---Expiração-----
+				-- expiration = false,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
+				-- days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
+
+			},
+			{
+				curLevel = 5,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				-- randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				-- group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				permissions = {"police.permissao","FBI.permissao"},
+				permissions = {"police.permissao","FBI.permissao"},  -- Restrinja o premio para apenas quem tiver a permissão especificada aqui.
 				money = 10000,  -- dinheiro que o player irá receber ao chegar no level especificado.
 				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
 				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
@@ -111,7 +127,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 10,  -- Level em que a premiação será dada.
+				curLevel = 10,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -127,7 +143,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 280,  -- Level em que a premiação será dada.
+				curLevel = 280,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Supreme",  -- Grupo que o player irá receber ao chegar no level especificado.
 				money = 666,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -143,7 +159,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 500,  -- Level em que a premiação será dada.
+				curLevel = 500,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -159,7 +175,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 1000,  -- Level em que a premiação será dada.
+				curLevel = 1000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -175,7 +191,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 2000,  -- Level em que a premiação será dada.
+				curLevel = 2000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -191,7 +207,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 3000,  -- Level em que a premiação será dada.
+				curLevel = 3000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -207,7 +223,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 4000,  -- Level em que a premiação será dada.
+				curLevel = 4000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -223,7 +239,7 @@ table.insert(Config.scriptsConfig, {
 
 			},
 			{
-				curLevel = 5000,  -- Level em que a premiação será dada.
+				curLevel = 5000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
 				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
 				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
@@ -278,6 +294,7 @@ table.insert(Config.scriptsConfig, {
 			reward = "Recompensa",
 			YouWon = "Você ganhou:",
 			rewardLevel = "por chegar ao nível:",
+			fristReward = "por jogar em nosso servidor continue assim e receba mais premios!"
 		},
 
 		notifys = {
@@ -343,6 +360,7 @@ table.insert(Config.scriptsConfig, {
 			reward = "Reward",
 			YouWon = "You won:",
 			rewardLevel = "for reach the level:",
+			fristReward = "For playing on our server, keep it up and get more rewards!"
 		},
 
 		notifys = {
