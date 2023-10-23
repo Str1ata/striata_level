@@ -1,21 +1,23 @@
 table.insert(Config.scriptsConfig, {
 
     levelConfig = {
+		itensImages = "http://0.0.0.0/inventory/",  -- Link de imagens do seu inventario
+		vehiclesImages = "http://0.0.0.0/vehicles/",  -- Link de imagens dos seus veiculos
+
 		webhookLevelUp = "",  -- Webhook onde sairá todos os players que passaram de level.
 		webhookLevelRewards = "",  -- Webhook onde sairá todos os prêmios recebidos pelos players.
 		webhookLevelRewardsExpiration = "",  -- Webhook onde sairá todos os prêmios expirados dos players.
 		webhookLevelSalary = "",  -- Webhook onde sairá todos os salarios recebidos pelos players.
 
-		getIdOnlyAfterSpawn = true,  -- Defina como (true) para obter id somente após o spawn, ultil para servidores com multi caracter onde o player pode ter varios ids.
-		expirationSystem = true,  -- Defina como (true) para habilitar o sistema de expiração, esse sistema ira verificar as datas dos premios e os removera caso esteja expirada.
-		timeCheckExpiration = 1,  -- Defina como o tempo em horas que o script ira verificar os premios expirados.
+		expirationSystem = true,  -- Defina como (true) para habilitar o sistema de expiração, esse sistema ira verificar as datas dos prêmios e os removera caso esteja expirada.
+		timeCheckExpiration = 1,  -- Defina como o tempo em horas que o script ira verificar os prêmios expirados.
 
-		rewardNotifyTime = 60,  -- Defina o tempo da notificação que mostra os premios em segundos.
+		rewardNotifyTime = 60,  -- Defina o tempo da notificação que mostra os prêmios em segundos.
 
 		logoDesactiveActive = 'iron:desactivelogo',  -- Evento para esconder a hud.
 		logoActive = 'iron:activelogo',  -- Evento para mostrar a hud novamente.
 
-		commandPermission = { "owner.permissao","admin.permissao","mod.permissao","suporte.permissao" },  -- Defina as permissoes que terão acesso ao comando (/levelcheck)
+		commandPermission = { "owner.permissao","admin.permissao","mod.permissao","suporte.permissao" },  -- Defina as permissões que terão acesso ao comando (/vernivel)
 		
 		clientEvents = {  -- Adicione eventos do client, esses eventos serão acionados a cada up.
 
@@ -25,7 +27,87 @@ table.insert(Config.scriptsConfig, {
 
 		},
 
-		salaryMode = true,  -- Defina true para ativar o sistema de salario. OBS: esse salario sera contado quantos minutos dp level o player estava em serviço e entregue no final do level.
+		whiteListSystem = true,  -- Defina true para ativar ou false para desativar o sistema de white list.
+		whiteListMode = "Questions",  -- Modos: "Standard" : ( apenas clique para liberar) | "Questions" : (Perguntas com % de acertos para ser aprovado)
+		whiteListPercent = 60,  -- Porcentagem que o jogador deve acertar das perguntas para ser aprovado.
+		whiteListTimeToNew = 10,  -- Tempo em minutos para realizar o teste novamente caso reprovado.
+		whiteListQuestions = {  -- Defina as perguntas aqui!
+			[1] = {
+				["Question"] = "O que é power-gaming?",
+				["Response"] = 3,
+				["Questions"] = {
+					[1] = "É o poder do jogo.",
+					[2] = "É Matar alguém sem motivo.",
+					[3] = "É Fazer algo que não é possível na vida real e abusar da fisica do jogo.",
+					[4] = "É sair do servidor em quanto está participando de uma ação."
+				}
+			},
+			[2] = {
+				["Question"] = "O que é combat logging?",
+				["Response"] = 4,
+				["Questions"] = {
+					[1] = "É matar alguém ao entrar no servidor.",
+					[2] = "É matar alguém sem motivo.",
+					[3] = "É matar alguém atropelado.",
+					[4] = "É sair do servidor em quanto está participando de uma ação."
+				}
+			}
+		},
+
+		--? Segue a ordem dos parâmetros retornados pelo evento abaixo:
+		---@param user_id id unico do player
+		---@param identity tabela com a informações do player {name,lastName,age,document,phone}
+		---@param status de white list true caso tenha passado ou false caso tenha reprovado 
+		---@param points pontos feito no questionário
+		whiteListEventInfo = "striata:whiteList:inform",  -- Este evento será acionado quando um player terminar sua white list, informando se o mesmo passou ou reprovou e qual sua pontuação, tambem é entregue o nome e o id.
+		
+		whiteListSqlInfos = {  -- Insira aqui as informações do seu banco de dados utilizado para whitelist.
+			dataTable = "vrp_users",  -- Nome da tabela usada para whitelist.
+			idColumn = "id",  -- Nome da coluna com o id do player.
+			whiteListColumn = "whitelisted", -- Nome da coluna com o estado de aprovação do player na whitelist.
+			aproveState = true,  -- Estado de aprovado na coluna de aprovação.
+			reproveState = false  -- Estado de reprovado na coluna de aprovação.
+		},
+		whiteListButtons = {  -- Adicione até 6 botões ao menu de whitelist.
+			[1] = {
+				enable = true,
+				title = "Regras",
+				img = "https://media.discordapp.net/attachments/753086574710882457/1164190722069643264/icons8-rules-96.png",
+				url = ""
+			},
+			[2] = {
+				enable = true,
+				title = "Instagran",
+				img = "https://media.discordapp.net/attachments/753086574710882457/1164179512347590788/instagram.png",
+				url = ""
+			},
+			[3] = {
+				enable = true,
+				title = "Discord",
+				img = "https://media.discordapp.net/attachments/753086574710882457/1164179512620240966/discord.png",
+				url = "https://discord.gg/DAdDZv6A5G"
+			},
+			[4] = {
+				enable = true,
+				title = "Top Boost discord",
+				img = "https://media.discordapp.net/attachments/753086574710882457/1164235639672295424/banner_by_slimarts.png",
+				url = "https://discord.gg/top-boost"
+			},
+			[5] = {
+				enable = false,
+				title = "",
+				img = "",
+				url = ""
+			},
+			[6] = {
+				enable = true,
+				title = "Striata Shop discord",
+				img = "https://media.discordapp.net/attachments/753086574710882457/1164185305323147315/2160x2160_.png",
+				url = "https://discord.gg/DAdDZv6A5G"
+			},
+		},
+
+		salaryMode = true,  -- Defina true para ativar o sistema de salário. OBS: esse salário será contado quantos minutos do nível o player estava em serviço e entregue no up do nível.
 		salary = {
 			["Enfermeiro(a)"] = { onServiceGroup = "ParamedicoI", outServiceGroup = "PaisanaParamedicoI", payment = 10000 },
 			["Medico(a)"] = { onServiceGroup = "ParamedicoII", outServiceGroup = "PaisanaParamedicoII", payment = 15000 },
@@ -92,33 +174,71 @@ table.insert(Config.scriptsConfig, {
 			"hondafk8",
 		},
 
-		prizesList = {  -- Crie as premiações de cada level desejado abaixo.
+		prizesList = {  -- Crie as premiações de cada nível desejado abaixo.
 			{
-				-- curLevel = 0,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
-				-- randomCar = false,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				-- group = "cidadao",  -- Grupo que o player irá receber ao chegar no level especificado.
-				-- money = 5000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				-- specifyCars = {"faggio"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				-- itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				-- 	{item = 'agua', value = 1},
-				-- 	{item = 'hamburguer', value = 1},
+				curLevel = 0,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
+				randomCar = false,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
+				group = "cidadao",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				money = 5000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				specifyCars = {"faggio"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				-- playerChoice = {  -- Adicione itens e veículos para serem escolhidos pelo jogador. 
+				-- 	itensAmout = 3,
+				-- 	itens = {
+				-- 		{item = 'celular', amount = 1},
+				-- 		{item = 'radio', amount = 1},
+				-- 		{item = 'mochila', amount = 3},
+				-- 		{item = 'roupas', amount = 1},
+				-- 	},
+				-- 	vehiclesAmout = 2,
+				-- 	vehicles = {"bmwi8","bmwm5f90","19ramdonk","ferrariitalia","lamborghinihuracan","p1","nissangtr","nissantitan17","panamera","lancerevolution9","hondafk8"}
+				-- },
+				itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+					{item = 'agua', amount = 1},
+					{item = 'hamburguer', amount = 1},
+				},
+
+				---Expiração-----
+				expiration = false,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
+				days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
+
+			},
+			{
+				curLevel = 0,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
+				randomCar = false,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
+				-- group = "cidadao",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				-- money = 5000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				-- specifyCars = {"faggio"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				playerChoice = {  -- Adicione itens e veículos para serem escolhidos pelo jogador. 
+					itensAmout = 2,
+					itens = {
+						{item = 'celular', amount = 1},
+						{item = 'radio', amount = 1},
+						{item = 'mochila', amount = 3},
+						{item = 'roupas', amount = 1},
+					},
+					vehiclesAmout = 1,
+					vehicles = {"bmwi8","bmwm5f90","19ramdonk","ferrariitalia","lamborghinihuracan","p1","nissangtr","nissantitan17","panamera","lancerevolution9","hondafk8"}
+				},
+				-- itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				-- 	{item = 'agua', amount = 1},
+				-- 	{item = 'hamburguer', amount = 1},
 				-- },
 
-				-- ---Expiração-----
-				-- expiration = false,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
-				-- days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
+				---Expiração-----
+				expiration = true,  -- Defina como (true) para ativar. Esta opção ira remover carros e grupos automaticamente após os dias especificados abaixo.
+				days = 1,  -- Defina os dias para os players perderem os carros e grupos. (Apenas com a opção acima ativa.)
 
 			},
 			{
 				curLevel = 5,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				-- randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				-- group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
+				-- group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
 				permissions = {"police.permissao","FBI.permissao"},  -- Restrinja o premio para apenas quem tiver a permissão especificada aqui.
-				money = 10000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				money = 10000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -129,12 +249,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 10,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"tezeract","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -145,12 +265,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 280,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Supreme",  -- Grupo que o player irá receber ao chegar no level especificado.
-				money = 666,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				specifyCars = {"adder","furia"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-					{item = 'maconha', value = 50},
-					{item = 'dinheirosujo', value = 1000000},
+				group = "Supreme",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				money = 666,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				specifyCars = {"adder","furia"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+					{item = 'maconha', amount = 50},
+					{item = 'dinheirosujo', amount = 1000000},
 				},
 
 				---Expiração-----
@@ -161,12 +281,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 500,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -177,12 +297,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 1000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -193,12 +313,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 2000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -209,12 +329,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 3000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -225,12 +345,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 4000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -241,12 +361,12 @@ table.insert(Config.scriptsConfig, {
 			{
 				curLevel = 5000,  -- Level em que a premiação será dada. (Caso esteja 0 o premio sera dado ao entrar no servidor pela primeira vez!)
 				randomCar = true,  -- Defina true para dar um carro aleatório da lista (randomCars) ou false para desativar a opção.
-				group = "Standard",  -- Grupo que o player irá receber ao chegar no level especificado.
-				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no level especificado.
-				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no level especificado.
-				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no level especificado.
-				--	{item = 'maconha', value = 50},
-				--	{item = 'dinheirosujo', value = 1000000},
+				group = "Standard",  -- Grupo que o player irá receber ao chegar no nível especificado.
+				--money = 1000000,  -- dinheiro que o player irá receber ao chegar no nível especificado.
+				--specifyCars = {"Ferrariitalia","zentorno"},  -- Adicione o nome de spawn dos carros que o player irá receber ao chegar no nível especificado.
+				--itens = {  -- Adicione itens a esta lista para o player receber ao chegar no nível especificado.
+				--	{item = 'maconha', amount = 50},
+				--	{item = 'dinheirosujo', amount = 1000000},
 				--},
 
 				---Expiração-----
@@ -262,19 +382,20 @@ table.insert(Config.scriptsConfig, {
 		commands = {
 			level = "nivel",
 			levelCheck = "vernivel",
-			rewards = "premios",
+			rewards = "premios"
 		},
 
 		webhook = {
 			passaport = "[Passaporte]:",
 			levelUp = "[Chegou ao nível]:",
-			salaryPay = "[Recebeu seu salario de]:",
+			salaryPay = "[Recebeu seu salário de]:",
 			salaryNotPay = "[Não trabalhou ou não possui emprego!]",
 			Jobs = "[Dos empregos]:",
 			date = "[Data]:",
 			hour = "[Hora]:",
 			rewardsPassaport = "Passaporte:",
 			rewardsEarned = "[Ganhou]",
+			rewardsRescued = "[Resgatou]",
 			rewardsRandomVehicle = "Veiculo aleatório:",
 			rewardsGroup = "Grupo:",
 			rewardsVehicle = "Veiculo específico:",
@@ -282,19 +403,19 @@ table.insert(Config.scriptsConfig, {
 			rewardsItem = "Item:",
 			rewardsFor = "Por",
 			rewardsDays = "Dias",
-			rewardsLevel = "Por alcançar o level",
+			rewardsLevel = "Por alcançar o nível",
 			rewardsExpiration = "[Sistema de expiração]",
 			hadHis = "Teve o seu",
 			vehicle = "Veiculo:",
 			group = "Grupo:",
-			Expired = "Expirado.",
+			Expired = "Expirado."
 		},
 
 		chat = {
 			reward = "Recompensa",
 			YouWon = "Você ganhou:",
 			rewardLevel = "por chegar ao nível:",
-			fristReward = "por jogar em nosso servidor continue assim e receba mais premios!"
+			fristReward = "por jogar em nosso servidor continue assim e receba mais prêmios!"
 		},
 
 		notifys = {
@@ -302,11 +423,11 @@ table.insert(Config.scriptsConfig, {
 			getLevelP2 = "</b> é: <b>",
 			getLevelP3 = ", XP:",
 			getLevelPFinal = "</b>.",
-			getLevelError1 = "Este passaporte não esta online.",
+			getLevelError1 = "Este passaporte não está online.",
 			getLevelError2 = "Você deve especificar um passaporte.",
-			salary = "Seu salario caiu na conta! Valor recebido:",
+			salary = "Seu salário caiu na conta! Valor recebido:",
 			salaryJobs = "Empregos:",
-			noReward = "Sem premios!",
+			noReward = "Sem prêmios!",
 			vehicle = "Veiculo:",
 			group = "Grupo:",
 			expireDate = "Expira em:",
@@ -315,78 +436,116 @@ table.insert(Config.scriptsConfig, {
 			year = "Ano:",
 			minute = "Minuto:",
 			hour = "Hora:",
+			redeemedThePrizes = "Você resgatou os prêmios!",
+			NeedMarkPrizes = "Você deve selecionar o número de prêmios especificados!",
+			NeedMarkAllQuestions = "Por favor, responda a todas as questões antes de finalizar o questionário."
 		},
 
 		console = {
 			startLevelMensage1 = "Sistema de premiação não identificado, Criando...",
 			startLevelMensage2 = "Sistema de premiação criado no banco de dados!",
-			startLevelError = "Erro no sistema de premiação relogue! Se persistir contate a equipe DEV!!",
+			startLevelError = "Erro no sistema de premiação relogue! Se persistir contate a equipe DEV!!"
 		},
+
+		nui = {
+			whiteListError = "Erro ao obter sua aprovação na whitelist, contate a staff!",
+			welcomeToServer = "Bem-vindo a striata shop!",
+			TakeTheQuiz = "Responda o questionário abaixo!",
+			clickToAproved = "Clique aqui para ser aprovado!",
+			clickToStart = "Clique aqui para iniciar o questionário!",
+			clickToFinish = "Clique aqui para finalizar o questionário!",
+			wait = "Aguade um momento...",
+			aproved = "Você foi aprovado",
+			reproved = "Você foi reprovado, leia as regras e tente novamente!",
+			newAtempt = "Você pode tentar novamente em",
+			minutes = "minutos"
+		}
 	},
 
 	levelLanguageENUS = {  -- You can change the script texts here!
 		commands = {
 			level = "level",
-			levelCheck = "levelCheck",
-			rewards = "rewards",
+			levelCheck = "checklevel",
+			rewards = "rewards"
 		},
 
 		webhook = {
-			passaport = "[passaport]:",
-			levelUp = "[Has reached the level]:",
-			salaryPay = "[Received his salary from]:",
-			salaryNotPay = "[Has not worked or has no job!]",
+			passaport = "[Passport]:",
+			levelUp = "[Reached level]:",
+			salaryPay = "[Received salary of]:",
+			salaryNotPay = "[Did not work or does not have a job!]",
 			Jobs = "[From jobs]:",
 			date = "[Date]:",
 			hour = "[Hour]:",
 			rewardsPassaport = "Passport:",
-			rewardsEarned = "[won]",
-			rewardsRandomVehicle = "random vehicle:",
+			rewardsEarned = "[Earned]",
+			rewardsRescued = "[Rescued]",
+			rewardsRandomVehicle = "Random vehicle:",
 			rewardsGroup = "Group:",
 			rewardsVehicle = "Specific vehicle:",
 			rewardsMoney = "Money:",
 			rewardsItem = "Item:",
-			rewardsFor = "Per",
+			rewardsFor = "For",
 			rewardsDays = "Days",
-			rewardsLevel = "for reaching the level",
-			rewardsExpiration = "[Sistema de expiração]",
+			rewardsLevel = "For reaching level",
+			rewardsExpiration = "[Expiration system]",
 			hadHis = "Had his",
 			vehicle = "Vehicle:",
 			group = "Group:",
-			Expired = "Expired.",
+			Expired = "Expired."
 		},
-
+		
 		chat = {
 			reward = "Reward",
 			YouWon = "You won:",
-			rewardLevel = "for reach the level:",
-			fristReward = "For playing on our server, keep it up and get more rewards!"
+			rewardLevel = "for reaching level:",
+			fristReward = "for playing on our server, keep it up and receive more rewards!"
 		},
 
 		notifys = {
-			getLevelP1 = "The Passport Level: <b>",
+			getLevelP1 = "The level of the passport: <b>",
 			getLevelP2 = "</b> is: <b>",
 			getLevelP3 = ", XP:",
 			getLevelPFinal = "</b>.",
 			getLevelError1 = "This passport is not online.",
 			getLevelError2 = "You must specify a passport.",
-			salary = "Your salary has dropped into your account! value received:",
+			salary = "Your salary has been deposited! Amount received:",
 			salaryJobs = "Jobs:",
 			noReward = "No rewards!",
 			vehicle = "Vehicle:",
 			group = "Group:",
-			expireDate = "Expires in:",
+			expireDate = "Expires on:",
 			day = "Day:",
 			month = "Month:",
 			year = "Year:",
 			minute = "Minute:",
 			hour = "Hour:",
+			redeemedThePrizes = "You have redeemed the prizes!",
+			NeedMarkPrizes = "You must select the specified number of prizes!",
+			NeedMarkAllQuestions = "Please answer all questions before finishing the questionnaire."
 		},
 
 		console = {
 			startLevelMensage1 = "Unidentified reward system, Creating...",
-			startLevelMensage2 = "Awards system created in the database!",
-			startLevelError = "reconnect please, reward system error! If it persists, contact the DEV team!!",
+			startLevelMensage2 = "Reward system created in the database!",
+			startLevelError = "Error in the reward system, please relog! If it persists, contact the DEV team!!",
 		},
-	},
+
+		nui = {
+			whiteListError = "Error obtaining your whitelist approval, contact staff!",
+			welcomeToServer = "Welcome to striata shop!",
+			TakeTheQuiz = "Answer the questionnaire below!",
+			clickToAproved = "Click here to be approved!",
+			clickToStart = "Click here to start the questionnaire!",
+			clickToFinish = "Click here to finish the questionnaire!",
+			wait = "Please wait...",
+			aproved = "You have been approved",
+			reproved = "You have been disapproved, read the rules and try again!",
+			newAtempt = "You can try again in",
+			minutes = "minutes"
+		},
+	}
+
 })
+
+-- {"level":335220,"timeOfService":[{"service":"Prefeitura","time":8}]}
