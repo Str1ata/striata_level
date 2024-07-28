@@ -1,7 +1,7 @@
 {
     "scriptConfig": {
         "itensImages": "http://0.0.0.0/inventory/",
-        "vehiclesImages": "http://0.0.0.0/alphavehs/",
+        "vehiclesImages": "http://0.0.0.0/vehicles/",
         "webhookLevelUp": "",
         "webhookLevelRewards": "",
         "webhookLevelRewardsExpiration": "",
@@ -20,9 +20,9 @@
         "clientEvents": [],
         "serverEvents": [],
         "whiteListSystem": true,
-        "whiteListMode": "Questions",
+        "whiteListMode": "QuestionsAndInterview",
         "whiteListPercent": 60,
-        "whiteListTimeToNew": 10,
+        "whiteListTimeToNew": 30,
         "whiteListQuestions": [
             {
                 "Question": "O que é power-gaming?",
@@ -46,37 +46,30 @@
             }
         ],
         "whiteListEventInfo": "striata:whiteList:inform",
-        "whiteListSqlInfos": {
-            "dataTable": "vrp_users",
-            "idColumn": "id",
-            "whiteListColumn": "whitelisted",
-            "aproveState": true,
-            "reproveState": false
-        },
         "whiteListButtons": [
             {
                 "enable": true,
                 "title": "Regras",
-                "img": "https://media.discordapp.net/attachments/753086574710882457/1164190722069643264/icons8-rules-96.png",
+                "img": "../resources/striata_level/html/docs/rulesicon.png",
                 "url": ""
             },
             {
                 "enable": true,
                 "title": "Instagran",
-                "img": "https://media.discordapp.net/attachments/753086574710882457/1164179512347590788/instagram.png",
+                "img": "../resources/striata_level/html/docs/instagramicon.png",
                 "url": ""
             },
             {
                 "enable": true,
                 "title": "Discord",
-                "img": "https://media.discordapp.net/attachments/753086574710882457/1164179512620240966/discord.png",
+                "img": "../resources/striata_level/html/docs/discordicon.png",
                 "url": "https://discord.gg/DAdDZv6A5G"
             },
             {
-                "enable": true,
-                "title": "Top Boost discord",
-                "img": "https://media.discordapp.net/attachments/753086574710882457/1164235639672295424/banner_by_slimarts.png",
-                "url": "https://discord.gg/top-boost"
+                "enable": false,
+                "title": "",
+                "img": "",
+                "url": ""
             },
             {
                 "enable": false,
@@ -87,7 +80,7 @@
             {
                 "enable": true,
                 "title": "Striata Shop discord",
-                "img": "https://media.discordapp.net/attachments/753086574710882457/1164185305323147315/2160x2160_.png",
+                "img": "../resources/striata_level/html/docs/striatashopicon.png",
                 "url": "https://discord.gg/DAdDZv6A5G"
             }
         ],
@@ -472,6 +465,8 @@
             "clickToStart": "Clique aqui para iniciar o questionário!",
             "clickToFinish": "Clique aqui para finalizar o questionário!",
             "wait": "Aguarde um momento...",
+            "waitInterviewResponse": "Aguardando a aprovação na entrevista...",
+            "waitInterview": "Você foi aprovado no questionario mas deve entrar em nosso discord e realizar uma entrevista!",
             "aproved": "Você foi aprovado",
             "reproved": "Você foi reprovado, leia as regras e tente novamente!",
             "newAtempt": "Você pode tentar novamente em",
@@ -550,6 +545,8 @@
             "clickToStart": "Click here to start the questionnaire!",
             "clickToFinish": "Click here to finish the questionnaire!",
             "wait": "Please wait...",
+            "waitInterviewResponse": "Waiting for approval in the interview...",
+            "waitInterview": "You passed the questionnaire but should join our discord and conduct an interview!",
             "aproved": "You have been approved",
             "reproved": "You have been disapproved, read the rules and try again!",
             "newAtempt": "You can try again in",

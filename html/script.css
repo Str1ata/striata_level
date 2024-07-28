@@ -188,8 +188,8 @@
 	top: 0%;
 	left: 0%;
 
-	/* background-color: black; */
-	background-image: url("https://media.discordapp.net/attachments/753086574710882457/1164253434107658270/gta-v-night-los-santos.jpg");
+	background-color: black;
+	background-image: url("../resources/striata_level/html/docs/whitelistbackground.png");
 
 	background-size: cover;
     background-position: center;
