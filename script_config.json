@@ -23,6 +23,8 @@
         "whiteListMode": "QuestionsAndInterview",
         "whiteListPercent": 60,
         "whiteListTimeToNew": 30,
+        "requsetStory": true,
+        "storyMinLength": 504,
         "whiteListQuestions": [
             {
                 "Question": "O que é power-gaming?",
@@ -450,7 +452,9 @@
             "hour": "Hora:",
             "redeemedThePrizes": "Você resgatou os prêmios!",
             "NeedMarkPrizes": "Você deve selecionar o número de prêmios especificados!",
-            "NeedMarkAllQuestions": "Por favor, responda a todas as questões antes de finalizar o questionário."
+            "NeedMarkAllQuestions": "Por favor, responda a todas as questões antes de finalizar o questionário.",
+            "VeryShortStory": "História muito curta.",
+            "VeryLongStory": "História muito longa."
         },
         "console": {
             "startLevelMensage1": "Sistema de premiação não identificado, Criando...",
@@ -470,7 +474,8 @@
             "aproved": "Você foi aprovado",
             "reproved": "Você foi reprovado, leia as regras e tente novamente!",
             "newAtempt": "Você pode tentar novamente em",
-            "minutes": "minutos"
+            "minutes": "minutos",
+            "story": "Escreva a historia do seu personagem..."
         }
     },
     "languageENUS": {
@@ -530,7 +535,9 @@
             "hour": "Hour:",
             "redeemedThePrizes": "You have redeemed the prizes!",
             "NeedMarkPrizes": "You must select the specified number of prizes!",
-            "NeedMarkAllQuestions": "Please answer all questions before finishing the questionnaire."
+            "NeedMarkAllQuestions": "Please answer all questions before finishing the questionnaire.",
+            "VeryShortStory": "Very short story.",
+            "VeryLongStory": "Very long story."
         },
         "console": {
             "startLevelMensage1": "Unidentified reward system, Creating...",
@@ -550,7 +557,8 @@
             "aproved": "You have been approved",
             "reproved": "You have been disapproved, read the rules and try again!",
             "newAtempt": "You can try again in",
-            "minutes": "minutes"
+            "minutes": "minutes",
+            "story": "Write your character's story..."
         }
     }
 }

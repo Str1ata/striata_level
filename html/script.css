@@ -400,6 +400,24 @@
 	padding: 0% 0% 0% 2%;
 }
 
+#nuiLevelWhitelist .backScreen .questionBox textarea{
+    width: 37.5vw;
+    height: 6vw;
+    font-size: 150%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0.1rem solid rgba(0,0,0,1);
+
+    /* white-space: nowrap; */
+    overflow: hidden;
+    resize: none;
+
+    caret-color: black;
+    color: rgb(255, 255, 255);
+    font-family: 'Arial', cursive;
+    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
+    font-size: 1.0vw;
+}
+
 #nuiLevelWhitelist .backScreen .questionBox:last-child {
 	padding: 0% 0% 1% 2%;
 }
