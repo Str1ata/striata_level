@@ -1,7 +1,7 @@
 {
     "scriptConfig": {
-        "itensImages": "http://0.0.0.0/inventory/",
-        "vehiclesImages": "http://0.0.0.0/vehicles/",
+        "itensImages": "http://189.84.253.94/inventory/",
+        "vehiclesImages": "http://189.84.253.94/alphavehs/",
         "webhookLevelUp": "",
         "webhookLevelRewards": "",
         "webhookLevelRewardsExpiration": "",
@@ -11,11 +11,9 @@
         "rewardNotifyTime": 60,
         "logoDesactiveActive": "iron:desactivelogo",
         "logoActive": "iron:activelogo",
+        "eventChatAddMessage": "chat:addMessage",
         "commandPermission": [
-            "owner.permissao",
-            "admin.permissao",
-            "mod.permissao",
-            "suporte.permissao"
+            "admin.permissao"
         ],
         "clientEvents": [],
         "serverEvents": [],
@@ -88,209 +86,24 @@
         ],
         "salaryMode": true,
         "salary": {
-            "Enfermeiro(a)": {
-                "onServiceGroup": "ParamedicoI",
-                "outServiceGroup": "PaisanaParamedicoI",
-                "payment": 10000
-            },
-            "Medico(a)": {
-                "onServiceGroup": "ParamedicoII",
-                "outServiceGroup": "PaisanaParamedicoII",
-                "payment": 15000
-            },
-            "Diretoria": {
-                "onServiceGroup": "ParamedicoIII",
-                "outServiceGroup": "PaisanaParamedicoIII",
-                "payment": 18750
-            },
-            "Diretor(a)": {
-                "onServiceGroup": "Paramedicolider",
-                "outServiceGroup": "PaisanaParamedicolider",
-                "payment": 22500
-            },
-            "POLICIAI": {
-                "onServiceGroup": "PoliciaI",
-                "outServiceGroup": "PaisanaPoliciaI",
-                "payment": 6250
-            },
-            "POLICIAII": {
-                "onServiceGroup": "PoliciaII",
-                "outServiceGroup": "PaisanaPoliciaII",
-                "payment": 11250
-            },
-            "POLICIAIII": {
-                "onServiceGroup": "PoliciaIII",
-                "outServiceGroup": "PaisanaPoliciaIII",
-                "payment": 15000
-            },
-            "SUPERINTENDENTE": {
-                "onServiceGroup": "Policialider",
-                "outServiceGroup": "PaisanaPolicialider",
-                "payment": 18750
-            },
-            "FBI": {
-                "onServiceGroup": "FBI",
-                "outServiceGroup": "PaisanaFBI",
-                "payment": 16250
-            },
-            "FBI-Diretor": {
-                "onServiceGroup": "FBIlider",
-                "outServiceGroup": "PaisanaFBIlider",
-                "payment": 10000
-            },
-            "Mecanico-LosSantos": {
-                "onServiceGroup": "Mecanicols",
-                "outServiceGroup": "PaisanaMecanicols",
-                "payment": 2500
-            },
-            "Mecanico-LosSantos-Lider": {
-                "onServiceGroup": "Mecanicolslider",
-                "outServiceGroup": "PaisanaMecanicolslider",
-                "payment": 3750
-            },
-            "Mecanico-SportRace": {
-                "onServiceGroup": "Mecanicosr",
-                "outServiceGroup": "PaisanaMecanicosr",
-                "payment": 2500
-            },
-            "Mecanico-SportRace-Lider": {
-                "onServiceGroup": "Mecanicosrlider",
-                "outServiceGroup": "PaisanaMecanicosrlider",
-                "payment": 3750
-            },
-            "Mecanico-Bennys": {
-                "onServiceGroup": "Mecanicobn",
-                "outServiceGroup": "PaisanaMecanicobn",
-                "payment": 2500
-            },
-            "Mecanico-Bennys-Lider": {
-                "onServiceGroup": "Mecanicobnlider",
-                "outServiceGroup": "PaisanaMecanicobnlider",
-                "payment": 3750
-            },
-            "Mecanico-Beekers": {
-                "onServiceGroup": "Mecanicobe",
-                "outServiceGroup": "PaisanaMecanicobe",
-                "payment": 2500
-            },
-            "Mecanico-Beekers-Lider": {
-                "onServiceGroup": "Mecanicobelider",
-                "outServiceGroup": "PaisanaMecanicobelider",
-                "payment": 3750
-            },
-            "Ministro": {
-                "onServiceGroup": "Ministro",
-                "outServiceGroup": "",
-                "payment": 15000
-            },
-            "Juiz": {
-                "onServiceGroup": "Juiz",
-                "outServiceGroup": "",
-                "payment": 12500
-            },
-            "Promotor": {
-                "onServiceGroup": "Promotor",
+            "Policia": {
+                "onServiceGroup": "policia.permissao",
                 "outServiceGroup": "",
                 "payment": 10000
             },
-            "Advogado": {
-                "onServiceGroup": "Advogado",
-                "outServiceGroup": "",
-                "payment": 6250
-            },
-            "Bombeiro": {
-                "onServiceGroup": "Bombeiro",
-                "outServiceGroup": "PaisanaBombeiro",
-                "payment": 10000
-            },
-            "Bombeiro-Lider": {
-                "onServiceGroup": "Bombeirolider",
-                "outServiceGroup": "PaisanaBombeirolider",
-                "payment": 15000
-            },
-            "VIP-Start": {
-                "onServiceGroup": "Start",
-                "outServiceGroup": "",
-                "payment": 1000
-            },
-            "VIP-STANDARD": {
-                "onServiceGroup": "Standard",
-                "outServiceGroup": "",
-                "payment": 2500
-            },
-            "VIP-ADVANCED": {
-                "onServiceGroup": "Advanced",
-                "outServiceGroup": "",
-                "payment": 5000
-            },
-            "VIP-SUPREME": {
-                "onServiceGroup": "Supreme",
-                "outServiceGroup": "",
-                "payment": 10000
-            },
-            "VIP-DELUXE": {
-                "onServiceGroup": "Deluxe",
-                "outServiceGroup": "",
-                "payment": 15000
-            },
-            "VIP-ALPHA": {
-                "onServiceGroup": "Alpha",
-                "outServiceGroup": "",
-                "payment": 18750
-            },
-            "VIP-ALPHA-DELUXE": {
-                "onServiceGroup": "Alphadeluxe",
-                "outServiceGroup": "",
-                "payment": 31250
-            },
-            "BOOSTER-x1": {
-                "onServiceGroup": "Booster",
-                "outServiceGroup": "",
-                "payment": 625
-            },
-            "BOOSTER-x2": {
-                "onServiceGroup": "Booster2",
-                "outServiceGroup": "",
-                "payment": 1250
-            },
-            "BOOSTER-x3": {
-                "onServiceGroup": "Booster3",
-                "outServiceGroup": "",
-                "payment": 1875
-            },
-            "Prefeitura-1": {
-                "onServiceGroup": "Suporte",
-                "outServiceGroup": "",
-                "payment": 1500
-            },
-            "Prefeitura-2": {
-                "onServiceGroup": "Mod",
-                "outServiceGroup": "",
-                "payment": 2000
-            },
-            "Prefeitura-3": {
-                "onServiceGroup": "Admin",
-                "outServiceGroup": "",
-                "payment": 2500
-            },
-            "Prefeitura-4": {
-                "onServiceGroup": "Owner",
+            "Prefeitura": {
+                "onServiceGroup": "admin.permissao",
                 "outServiceGroup": "",
                 "payment": 3000
             }
         },
         "randomCars": [
-            "bmwi8",
-            "bmwm5f90",
-            "19ramdonk",
-            "ferrariitalia",
-            "lamborghinihuracan",
-            "p1",
-            "nissangtr",
-            "nissantitan17",
-            "panamera",
-            "lancerevolution9",
-            "hondafk8"
+            "zentorno",
+            "fq2",
+            "entity",
+            "prototipo",
+            "thrax",
+            "t20"
         ],
         "prizesList": [
             {
@@ -350,17 +163,8 @@
                     ],
                     "vehiclesAmout": 1,
                     "vehicles": [
-                        "bmwi8",
-                        "bmwm5f90",
-                        "19ramdonk",
-                        "ferrariitalia",
-                        "lamborghinihuracan",
-                        "p1",
-                        "nissangtr",
-                        "nissantitan17",
-                        "panamera",
-                        "lancerevolution9",
-                        "hondafk8"
+                        "panto",
+                        "brioso"
                     ]
                 },
                 "itens": [],
@@ -454,7 +258,8 @@
             "NeedMarkPrizes": "Você deve selecionar o número de prêmios especificados!",
             "NeedMarkAllQuestions": "Por favor, responda a todas as questões antes de finalizar o questionário.",
             "VeryShortStory": "História muito curta.",
-            "VeryLongStory": "História muito longa."
+            "VeryLongStory": "História muito longa.",
+            "IsNotDiscordMember": "Você não está em nosso discord, aperte o primeiro botão ao lado para se juntar a nós e finalize sua whitelist."
         },
         "console": {
             "startLevelMensage1": "Sistema de premiação não identificado, Criando...",
@@ -537,7 +342,8 @@
             "NeedMarkPrizes": "You must select the specified number of prizes!",
             "NeedMarkAllQuestions": "Please answer all questions before finishing the questionnaire.",
             "VeryShortStory": "Very short story.",
-            "VeryLongStory": "Very long story."
+            "VeryLongStory": "Very long story.",
+            "IsNotDiscordMember": "You are not on our discord, hit the first button next to join us and finish your whitelist."
         },
         "console": {
             "startLevelMensage1": "Unidentified reward system, Creating...",
