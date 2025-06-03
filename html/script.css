@@ -1,39 +1,134 @@
-#nuiLevel .containerLevel {
-    overflow: visible;
+#nuiLevel, #nuiLevelWhitelist {
+	position: absolute;
+    display: none;
+	width: 100%;
+	height: 100%;
+    
+	top: 0%;
+	left: 0%;
+}
+
+#nuiLevel .imageContainer {
     position: absolute;
-    bottom: 30%;
-    left: 30%;
+    width: 36.427975%; /* 699.4171142578125px/1920 */
+    height: 53.425926%; /* 577px/1080 */
+    left: 31.770833%; /* 610px/1920 */
+    top: 21.203704%; /* 229px/1080 */
+}
 
-    width: 40%;
-    height: 45%;
-    margin: auto;
+#nuiLevel #fivem .imageContainer {
+    border-radius: 0.7365vw;
 
-    border: solid black;
-    box-shadow: 0 0 0.3vw rgb(255, 255, 255);
-    border-radius: 0.0vw 2.0vw 0vw 2.0vw;
-    border-width: 2.5%;
-    /* background-color: rgb(0, 195, 255); */
+    background: linear-gradient(270deg, rgba(12, 20, 26, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), rgba(0, 0, 0, 0.30);
+    padding-top: 4.0741vh;
+}
+
+#nuiLevel #redm .imageContainer {
+    transform: scale(1.5) translate(0%, 0%);
+
+    background-image: url("../resources/striata_level/html/docs/paper.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 0.7vw;
 }
 
-#nuiLevel .boxesLevelItem,
-#nuiLevel .boxesLevelVehicle {
+#nuiLevel .containerLevel {
+    overflow: visible;
     position: absolute;
-    left: 4.5%;
-    background-color: #505050a6;
-    width: 90%;
-    height: 40%;
-    box-shadow: 0 0 0.3vw rgb(255, 255, 255);
-    border: solid black;
-    border-width: 2.5%;
+
+    width: 36.427975%; /* 699.4171142578125px/1920 */
+    height: 53.425926%; /* 577px/1080 */
+    left: 31.770833%; /* 610px/1920 */
+    top: 21.203704%; /* 229px/1080 */
+
+    border-radius: 0.7365vw;
+    flex-shrink: 0;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.9333vh;
+    padding-top: 4.0741vh;
+}
+
+#nuiLevel .containerLevel .boxesLevelItem,
+#nuiLevel .containerLevel .boxesLevelVehicle {
+    position: relative;
+    width: 85.164212%; /* 595.653076171875px/699.4171142578125 */
+    height: 38.300465%; /* 220.99368286132812px/577 */
+}
+
+#nuiLevel .containerLevel .boxesLevelItem .itemsText,
+#nuiLevel .containerLevel .boxesLevelVehicle .vehiclesText {
+    position: absolute;
+
+    width: 86.303194%; /* 514.067626953125px/595.653076171875 */
+    height: 14.695336%; /* 32.475765228271484px/220.99368286132812 */
+
+    left: 50%;
+    transform: translate(-50%,0%);
+    bottom: 90.0%;
+   
+
+    color: white;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+    line-height: normal;
+    text-transform: capitalize;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .itemsText,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .vehiclesText {
+    font-family: "Futuru";
+    font-size: 0.5776vw;
+    font-weight: 300;
+    letter-spacing: 0.0578vw;
+
+    border-radius: 0.8457vw;
+    border: 0.0521vw solid #1FA5DE;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .itemsText,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .vehiclesText {
+    font-family: "Give You Glory";
+    font-size: 0.7292vw;
+    font-weight: 400;
+    letter-spacing: 0.0729vw;
+
+    border: 0.0603vw solid #FFC342;
+    background: rgba(112, 85, 59, 0.50);
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .itemsText span,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .vehiclesText span {
+    font-family: "Futuru";
+    font-size: 0.5776vw;
+    font-weight: 900;
+    letter-spacing: 0.0578vw;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .itemsText span,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .vehiclesText span {
+    font-family: "Gloria Hallelujah";
+    font-size: 0.7292vw;
+    font-weight: 400;
+    letter-spacing: 0.0729vw;
+}
+
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles {
+    position: relative;
+    width: 100%;
+    height: 80.28691%; /* 177.429px/220.99368286132812px */
+    top: 19.713233%; /* 43.565px/220.99368286132812px */
 
     display: flex;
     justify-content: flex-start;
@@ -41,434 +136,1020 @@
     flex-direction: row;
     flex-wrap: nowrap;
     white-space: nowrap;
-    gap: 0.5%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-    pointer-events: all;
+    gap: 2.9333vh;
 }
 
-#nuiLevel .boxesLevelItem {
-    bottom: 53.0%;
-    border-radius: 2.0vw 0.0vw 0vw 0vw;
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems .box,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles .box {
+    width: 21.01072%; /* 125.151px/595.653076171875px */
+    height: 100%; /* 177.429px/177.429px */
+    flex-shrink: 0;
+    display: inline-block;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5%;
 }
 
-#nuiLevel .boxesLevelVehicle {
-    bottom: 4.5%;
-    border-radius: 0vw 0vw 2.0vw 0.0vw;
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems .box .photo,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles .box .photo {
+    position: relative;
+    width: 5.5694vw;
+    height: 9.9011vh;
+    flex-shrink: 0;
+    aspect-ratio: 106.93/106.93;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: #FFFFFF05;
 }
 
-#nuiLevel .containerLevel .itensText,
-#nuiLevel .containerLevel .VehiclesText {
-    position: absolute;
-    left: 30%;
-    bottom: 90.0%;
-    z-index: 1;
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems .box .infoBox,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox {
+    position: relative;
+    width: 85.442386%; /* 106.932px/125.151 */
+    height: 3.620013%; /* 8px/220.99368286132812 */
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 10%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .infoBox,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox {
+    font-family: "Futuru";
+    font-weight: 300;
+    font-size: 0.5776vw;
+    color: white;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .infoBox,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox {
+    font-family: "Krick";
+    font-weight: 700;
+    font-size: 0.7813vw;
+    color: #171410;
+}
+
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems .box .infoBox span,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox span {
+    width: 85.442386%; /* 106.932px/125.151 */
+    height: 4.508846%; /* 8px/177.429 */
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 10%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .infoBox span,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox span {
+    font-family: "Futuru";
+    font-weight: 800;
+    font-size: 0.5776vw;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .infoBox span,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .infoBox span {
+    font-family: "Krick";
+    font-weight: 700;
+    font-size: 0.7813vw;
+    color: #171410;
+}
+
+#nuiLevel .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox,
+#nuiLevel .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox {
+    position: relative;
+    width: 99.999611%; /* 125.1505126953125px/125.151 */
+    height: 20.089238%; /* 35.644134521484375px/177.429 */
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox {
+    background-color: #00000000;
+
+    border: 0.0521vw solid #FFFFFF4D;
+    border-top-left-radius: 0.2063vw 0.3667vh;
+    border-top-right-radius: 0.2063vw 0.3667vh;
+    border-bottom-right-radius: 0.9281vw 1.65vh;
+    border-bottom-left-radius: 0.9281vw 1.65vh;
+
+    font-family: "Futuru";
+    font-weight: 300;
+    font-size: 0.6vw;
+    color: white
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox {
+    background: linear-gradient(270deg, #998C83 0%, #D0C9C4 100%);
+
+    border-radius: 0.0917vw;
+    border: none;
+
+    font-family: "Gloria Hallelujah";
+    font-weight: 400;
+    font-size: 0.5948vw;
+
+    color: #2C231B;
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox:hover,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox:hover {
+    background: linear-gradient(270deg, #2C67BF 0%, #1FA5DE 100%), #FFF;
+    border: none;
+
+    color: white;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox:hover,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox:hover {
+    background: linear-gradient(270deg, #D0C9C4 0%, #998C83 100%);
+
+}
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox.selected,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox.selected {
+    border-radius: 0.2063vw 0.2063vw 0.9282vw 0.9282vw;
+    background: #FFF;
+
+    color: #2C67BF;
+ 
+    text-edge: cap;
+    font-family: "Futuru";
+    font-weight: 700;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox.selected,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox.selected {
+    border-radius: 0.0917vw;
+
+    background: linear-gradient(90deg, #AE6530 0%, #CA9847 100%), linear-gradient(90deg, #7C4721 0%, #9F6338 77.5%, #E17B32 100%);
+
+    color: white;
+}
+
+
+#nuiLevel #fivem .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox.selected:hover,
+#nuiLevel #fivem .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox.selected:hover {
+    background: linear-gradient(270deg, #1FA5DE 0%, #2C67BF 100%), #FFF;
+    border: none;
+
+    color: white;
+}
+
+#nuiLevel #redm .containerLevel .boxesLevelItem .prizeItems .box .item-checkbox.selected:hover,
+#nuiLevel #redm .containerLevel .boxesLevelVehicle .prizeVehicles .box .vehicle-checkbox.selected:hover {
+    background: linear-gradient(90deg, #CA9847 0%, #AE6530 100%), linear-gradient(90deg, #E17B32 0%, #9F6338 77.5%, #7C4721 100%);
 }
 
 #nuiLevel .containerLevel .levelButton {
+    width: 24.022172%; /* 168.0151824951172px/699.4171142578125 */
+    height: 4.902647%; /* 28.288270950317383px/577 */
+
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+#nuiLevel #fivem .containerLevel .levelButton {
+    border-radius: 0.7365vw;
+
+    background: linear-gradient(270deg, #FFFFFF 0%, #DCDCDC 100%);
+
+    font-family: "Futuru";
+    font-weight: 300;
+    font-size: 0.6495vw;
+    color: #2C67BF;
+}
+
+#nuiLevel #redm .containerLevel .levelButton {
+    background: linear-gradient(270deg, #998C83 0%, #D0C9C4 100%);
+    
+    border-radius: 0.0917vw;
+    border: none;
+
+    font-family: "Gloria Hallelujah";
+    font-weight: 400;
+    font-size: 0.5948vw;
+    color: #2C231B;
+}
+
+#nuiLevel #fivem .containerLevel .levelButton:hover {
+    background: linear-gradient(270deg, #1FA5DE 0%, #2C67BF 100%);
+
+    font-family: "Futuru";
+    font-weight: 700;
+    font-size: 0.7578vw;
+    color: white;
+}
+
+#nuiLevel #redm .containerLevel .levelButton:hover {
+    background: linear-gradient(90deg, #AE6530 0%, #CA9847 100%), linear-gradient(90deg, #7C4721 0%, #9F6338 77.5%, #E17B32 100%);
+
+    font-family: "Gloria Hallelujah";
+    font-weight: 400;
+    font-size: 0.5948vw;
+    color: white;
+}
+
+/* --------------------------------- */
+
+#nuiLevelBar {
     position: absolute;
-    left: 4.5%;
-    width: 90.6%;
-    height: 5%;
-    bottom: 47.2%;
-    z-index: 1;
-    background-color: #05a000d5;
-    border: solid black;
-    box-shadow: 0 0 0.3vw rgb(255, 255, 255);
-    border-radius: 0.0vw 2.0vw 0.0vw 2.0vw;
-    border-width: 2.5%;
+    display: none;
+    width: 19.114583%; /* 367px/1920 */
+    height: 6.571389%; /* 70.971px/1080 */
+    left: 40.46875%; /* 777px/1920 */
+    top: 88.333333%; /* 954px/1080 */
+}
+
+#nuiLevelBar .levelBarContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nuiLevelBar .levelBarContainer .levelInformation {
+    position: relative;
+    width: 100%; /* 367px/367 */
+    height: 26.771498%; /* 19px/70.971 */
+
+    display: flex;
+    flex-direction: row;
+}
+
+#nuiLevelBar .levelBarContainer .levelInformation .currentLevel,
+#nuiLevelBar .levelBarContainer .levelInformation .nextLevel {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 0.6vw;
 }
 
-#nuiLevel .containerLevel .levelButton:hover {
-    background-color: #07da00d5;
-	cursor: pointer;
-    border-radius: 2.0vw 0.0vw 2.0vw 0.0vw;
+
+#nuiLevelBar .levelBarContainer .levelInformation .currentLevel {
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    color: white;
+    text-shadow: 0vw 0vh 0.49vw #FFFFFF4D;
 }
 
-#nuiLevel .containerLevel .photo {
+#nuiLevelBar #fivem .levelBarContainer .levelInformation .currentLevel {
+    font-family: "Futuru";
+    font-weight: 900;
+    font-size: 0.3672vw;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelInformation .currentLevel {
+    top: -52.631579%; /* -10px/19 */
+    font-family: "Krick";
+    font-weight: 700;
+    font-size: 0.6771vw;
+}
+
+#nuiLevelBar .levelBarContainer .levelInformation .currentLevel span {
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    text-shadow: 0vw 0vw 0.6914vw #FFFFFF4D;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelInformation .currentLevel span {
+    font-family: "Futuru";
+    font-weight: 200;
+    font-size: 0.8448vw;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelInformation .currentLevel span {
+    font-family: "Krick";
+    font-weight: 400;
+    font-size: 1.0938vw;
+}
+
+#nuiLevelBar .levelBarContainer .levelInformation .nextLevel {
+    margin-left: auto;
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    color: white;
+    text-shadow: 0vw 0vw 0.4859vw 0vw #FFFFFF4D;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelInformation .nextLevel {
+    font-family: "Futuru";
+    font-weight: 900;
+    font-size: 0.3672vw;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelInformation .nextLevel {
+    top: -52.631579%; /* -10px/19 */
+    font-family: "Krick";
+    font-weight: 700;
+    font-size: 0.6771vw;
+}
+
+#nuiLevelBar .levelBarContainer .levelInformation .nextLevel span {
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color: white;
+    text-shadow: 0vw 0vw 0.6914vw 0vw #FFFFFF4D;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelInformation .nextLevel span {
+    font-family: "Futuru";
+    font-weight: 200;
+    font-size: 0.8448vw;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelInformation .nextLevel span {
+    font-family: "Krick";
+    font-weight: 400;
+    font-size: 1.0938vw;
+}
+
+#nuiLevelBar .levelBarContainer .levelBar {
+    --level-start-opacity: 1;
+    --level-end-opacity: 1;
+    --level-back-color: #151211;
+    --level-back-opacity: 0.6;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelBar {
+    --level-start-color: #1FA5DE;
+    --level-end-color: #2C67BF;
+}  
+
+#nuiLevelBar #redm .levelBarContainer .levelBar {
+    --level-start-color: #FFC342;
+    --level-end-color: #C28708;
+}  
+
+#nuiLevelBar .levelBarContainer .levelBar .backLevelSvg,
+#nuiLevelBar .levelBarContainer .levelBar .frontLevelSvg {
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 70%;
-    background-size: cover;
+    height: 100%;
+}
+
+#nuiLevelBar .levelBarContainer .levelBar .level-back-part {
+    fill: var(--level-back-color, #151211);
+    fill-opacity: var(--level-back-opacity, 0.6);
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelBar .level-back-part {
+    stroke: #1FA5DE;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelBar .level-back-part {
+    stroke: #E17B32;
+}
+
+#nuiLevelBar .levelBarContainer .levelBar .level-front-part {
+    fill: url(#levelGradient);
+}
+
+#nuiLevelBar .levelBarContainer .levelXp {
+    position: relative;
+    width: 16.621253%; /* 61px/367 */
+    height: 29.589551%; /* 21px/70.971 */
+    left: 50%;
+    top: 42.270787%; /* 30px/70.971 */
+    transform: translate(-50%,0%);
+
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelXp {
+    background: #0B0D1099;
+    border-radius: 1vw;
+    border: 0.026vw solid #1FA5DE;
+    
+    font-family: "Futuru";
+    font-weight: 200;
+    font-size: 0.5375vw;
+    color: white;
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelXp {
+    background: #70553B80;
+    border-radius: 0.125vw;
+    border: 0.0521vw solid #E17B32;
+
+    font-family: "Give You Glory";
+    font-weight: 400;
+    font-size: 0.625vw;
+    color: white;
+}
+
+#nuiLevelBar #fivem .levelBarContainer .levelXp .levelXpText {
+    transform: translate(25%,37.5%);
+}
+
+#nuiLevelBar #redm .levelBarContainer .levelXp .levelXpText {
+    transform: translate(18.75%,50%);
+}
+
+/* --------------------------------- */
+
+#nuiLevelWhitelist .screenImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	left: 0%;
+	top: 0%;
+
+	background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-#nuiLevel .containerLevel .infoBox {
+#nuiLevelWhitelist #fivem .screenImage {
+    background-image: url("../resources/striata_level/html/docs/fivemwhitelistbg.png");
+    filter: grayscale(60%) brightness(0.8);
+}
+
+#nuiLevelWhitelist #redm .screenImage {
+    background-image: url("../resources/striata_level/html/docs/redmwhitelistbg.png");
+    filter: grayscale(60%) brightness(0.5);
+}
+
+#nuiLevelWhitelist .screenEffect {
+    position: absolute;
+
     width: 100%;
-    height: 27.5%;
-    background-color: #ffffffad;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 0.7vw;
+    height: 100%;
+	left: 0%;
+	top: 0%;
+    flex-shrink: 0;
 }
 
-#nuiLevel .containerLevel .box {
-    min-width: 15%;
-    height: 70%;
-    margin: 0.7% 0% 0% 0%;
-    white-space: nowrap;
-    border: solid rgb(175, 10, 10);
-    box-shadow: 0 0 0.35vw rgb(175, 10, 10);
-    background-color: #505050cb;
-    border-width: 2.5%;
-    display: inline-block;
+#nuiLevelWhitelist #fivem .screenEffect {
+    opacity: 0.6;
+    background: linear-gradient(249deg, rgba(17, 17, 19, 0.00) 72.19%, rgba(31, 165, 222, 0.20) 108.68%), linear-gradient(68deg, rgba(17, 17, 19, 0.00) 63.85%, rgba(31, 165, 222, 0.80) 125.03%), radial-gradient(62.36% 62.36% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 100%), #111113;
+    backdrop-filter: blur(1.042vw);
 }
 
-#nuiLevel .checkbox-label {
-    position: absolute;
-    display: inline-block;
-    width: 3%;
-    height: 8%;
-    border: 0.15vw solid #ffffff;
-    box-shadow: 0 0 0.15vw rgb(0, 0, 0);
-    border-radius: 50%;
-    cursor: pointer;
-	transform: translate(15%, 15%);
+#nuiLevelWhitelist #redm .screenEffect {
+    opacity: 0.4;
+    background: linear-gradient(249deg, rgba(17, 17, 19, 0.00) 72.19%, rgba(255, 225, 190, 0.90) 108.68%), linear-gradient(68deg, rgba(17, 17, 19, 0.00) 63.85%, rgba(255, 225, 190, 0.90) 125.03%);
+    mix-blend-mode: lighten;
 }
 
-#nuiLevel .item-checkbox, .vehicle-checkbox {
-    position: absolute;
-    left: -9999px;
-}
-
-#nuiLevel .item-checkbox:checked +.checkbox-label::before,
-#nuiLevel .vehicle-checkbox:checked +.checkbox-label::before {
-    content: '\2713';
-    display: block;
-    text-align: center;
-    line-height: 20px;
-    color: rgb(30, 255, 0);
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#nuiLevel .item-checkbox:checked + .checkbox-label,
-#nuiLevel .vehicle-checkbox:checked + .checkbox-label {
-    border-color: #07da00;
-}
-
-#nuiLevel .containerLevel *::-webkit-scrollbar {
-    width: 2.5vw;
-    height: 0.5vw;
-}
-
-#nuiLevel .containerLevel *::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    border-radius: 2.0vw;
-    border: solid black;
-}
-
-#nuiLevel .containerLevel *::-webkit-scrollbar-button,
-#nuiLevel .containerLevel *::-webkit-scrollbar-corner { 
-	background: transparent;
-}
-
-#nuiLevelWhitelist .backScreen {
+#nuiLevelWhitelist .whiteListScreen {
     overflow: visible;
     position: absolute;
 
     width: 100%;
     height: 100%;
-	top: 0%;
 	left: 0%;
-
-	background-color: black;
-	background-image: url("../resources/striata_level/html/docs/whitelistbackground.png");
-
-	background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+	top: 0%;
+    flex-shrink: 0;
 
 	z-index: 5;
 }
 
-
-#nuiLevelWhitelist .socialButton {
-	z-index: 6;
-	cursor: pointer;
-}
-
-#nuiLevelWhitelist .socialButton:hover::before {
-    content: attr(title);
+#nuiLevelWhitelist .serverLogo {
     position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    padding: 2px 5px;
-    border-radius: 3px;
-    white-space: nowrap;
+    width: 8.786455%;
+    height: 7.222222%;
+    left: 45.670313%;
+    top: 6.111111%;
 
-	font-family: 'Arial', cursive;
-    color: rgb(255,255,255);
-    text-shadow: 0.104vw 0 0 rgb(0,0,0), -0.104vw 0 0 rgb(0,0,0), 0 0.104vw 0 rgb(0,0,0), 0 -0.104vw 0 rgb(0,0,0), 0.052vw 0.052vw rgb(0,0,0), -0.052vw -0.052vw 0 rgb(0,0,0), 0.052vw -0.052vw 0 rgb(0,0,0), -0.052vw 0.052vw 0 rgb(0,0,0);
-    font-size: 0.7vw;
-}
-
-#nuiLevelWhitelist #socialButton1 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 60%;
-	left: 26%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist #socialButton2 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 50%;
-	left: 26%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist #socialButton3 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 40%;
-	left: 26%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist #socialButton4 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 40%;
-	left: 71%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist #socialButton5 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 50%;
-	left: 71%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist #socialButton6 {
-	position: absolute;
-	width: 2.5%;
-    height: 4%;
-	top: 60%;
-	left: 71%;
-	background-color: rgba(255, 255, 255, 0.500);
-	border-radius: 1vw;
-}
-
-#nuiLevelWhitelist .socialButton img{
-	width: 100%;
-	height: 100%;
-	border-radius: 1vw;
-	background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+#nuiLevelWhitelist #fivem .serverLogo {
+    background-image: url("../resources/striata_level/html/docs/serverfivemlogo.png");
+}
 
-#nuiLevelWhitelist .backScreen .mensage,
-#nuiLevelWhitelist .backScreen .textBox {
-	position: absolute;
-	width: 40%;
-    height: 20%;
-	top: 40%;
-	left: 30%;
-	
-	background-color: rgba(255, 255, 255, 0.238);
-	border-radius: 2.0vw 2.0vw 0.0vw 0.0vw;
-    border: solid white;
-	box-shadow: 0 0 0.5vw white;
+#nuiLevelWhitelist #redm .serverLogo {
+    background-image: url("../resources/striata_level/html/docs/serverredmlogo.png");
+}
 
-	display: flex;
-    align-items: center;
-    justify-content: center;
+#nuiLevelWhitelist .whiteListScreen .textBox {
+    position: relative;
+    max-width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    color: white;
     text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 1.3vw;
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+    line-height: normal;
 }
 
-#nuiLevelWhitelist .backScreen button {
-	position: absolute;
-	width: 40.3%;
-    height: 4%;
-	top: 61.5%;
-	left: 30.05%;
+#nuiLevelWhitelist #fivem .whiteListScreen .textBox {
+    font-family: "Futuru";
+    font-size: 4.1442vw;
+    font-weight: 900;
+}
 
-	z-index: 1;
-    background-color: #05a000d5;
-    border: solid white;
-    box-shadow: 0 0 0.5vw white;
-    border-radius: 0.0vw 0.0vw 2.0vw 2.0vw;
-    border-width: 2.5%;
+#nuiLevelWhitelist #fivem .whiteListScreen .textBox span {
+    font-size: 5.4763vw;
+    font-weight: 200;
+}
 
-	display: flex;
+#nuiLevelWhitelist #redm .whiteListScreen .textBox {
+    font-family: "Krick";
+    font-size: 5.1607vw;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg, #FFAD5B 0%, #B55400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .textBox span {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background: none;
+    color: white;
+
+    font-family: "Gloria Hallelujah";
+    font-size: 4.9863vw;
+    font-weight: 400;
+}
+
+#nuiLevelWhitelist .whiteListScreen .textBox#approved,
+#nuiLevelWhitelist .whiteListScreen .textBox#preApproved,
+#nuiLevelWhitelist .whiteListScreen .textBox#reproved {
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+    background: none !important;
+    color: white !important;
+}
+
+#nuiLevelWhitelist .whiteListScreen .textBox#approved {
+    text-shadow: 0.0521vw 0.0521vw 0.1563vw green, -0.0521vw -0.0521vw 0.1563vw white;
+}
+
+#nuiLevelWhitelist .whiteListScreen .textBox#preApproved {
+    text-shadow: 0.0521vw 0.0521vw 0.1563vw yellow, -0.0521vw -0.0521vw 0.1563vw white;
+}
+
+#nuiLevelWhitelist .whiteListScreen .textBox#reproved {
+    text-shadow: 0.0521vw 0.0521vw 0.1563vw red, -0.0521vw -0.0521vw 0.1563vw black;
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialR {
+    position: absolute;
+    width: 5%;
+    height: 24%;
+    left: 2%;
+    top: 50%;
+    transform: translate(-0%,-50%);
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+	gap: 2.7778vh;
+
+    cursor: pointer;
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialR .socialButton {
+    position: relative;
+    width: 64.395833%;
+    height: 23.850309%;
+
+    border-radius: 10vw;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .socialR .socialButton {
+    background: linear-gradient(180deg, rgba(12, 20, 26, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .socialR .socialButton {
+    background: rgba(21, 18, 17, 0.80);
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialR .socialButton .backCircle {
+    position: absolute;
+    width: 118.084762%;
+    height: 118.084762%;
+    transform: translate(-9.1875%,-9.1875%);
+    border-radius: 10vw;
+    border: 0.1177vw rgba(0, 0, 0, 0.5) solid;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .socialR .socialButton:hover .backCircle {
+    border: 0.1177vw solid transparent;
+    border-image: linear-gradient(0deg, #2C67BF 0%, #1FA5DE 100%);
+    border-image-slice: 0;
+    box-shadow: 0vw 0vh 0.3925vw rgba(31, 165, 222, 0.80)
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .socialR .socialButton:hover .backCircle {
+    border: 0.1177vw solid transparent;
+    border-image: linear-gradient(0deg, #B55400 0%, #FFAD5B 100%);
+    border-image-slice: 0;
+    box-shadow: 0vw 0vh 0.3925vw rgba(255, 173, 91, 0.80)
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialR .socialButton img {
+    position: relative;
+	width: 50%;
+	height: 50%;
+    transform: translate(50%,50%);
+
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    border-radius: 10vw;
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialL {
+    position: absolute;
+    width: 5%;
+    height: 24%;
+    left: 93%;
+    top: 50%;
+    transform: translate(-0%,-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	gap: 2.7778vh;
+
+    cursor: pointer;
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialL .socialButton {
+    position: relative;
+    width: 64.395833%;
+    height: 23.850309%;
+
+    border-radius: 10vw;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .socialL .socialButton {
+    background: linear-gradient(180deg, rgba(12, 20, 26, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .socialL .socialButton {
+    background: rgba(21, 18, 17, 0.80);
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialL .socialButton .backCircle {
+    position: absolute;
+    width: 118.084762%;
+    height: 118.084762%;
+    transform: translate(-9.1875%,-9.1875%);
+    border-radius: 10vw;
+    border: 0.1177vw rgba(0, 0, 0, 0.5) solid;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .socialL .socialButton:hover .backCircle {
+    border: 0.1177vw solid transparent;
+    border-image: linear-gradient(0deg, #2C67BF 0%, #1FA5DE 100%);
+    border-image-slice: 0;
+    box-shadow: 0vw 0vh 0.3925vw rgba(31, 165, 222, 0.80)
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .socialL .socialButton:hover .backCircle {
+    border: 0.1177vw solid transparent;
+    border-image: linear-gradient(0deg, #B55400 0%, #FFAD5B 100%);
+    border-image-slice: 0;
+    box-shadow: 0vw 0vh 0.3925vw rgba(255, 173, 91, 0.80)
+}
+
+#nuiLevelWhitelist .whiteListScreen .socialL .socialButton img {
+    position: relative;
+	width: 50%;
+	height: 50%;
+    transform: translate(50%,50%);
+
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10vw;
+}
+
+#nuiLevelWhitelist .whiteListScreen button {
+    position: absolute;
+    width: 15.047344%;
+    min-height: 4.503981%;
+    left: 42.552083%;
+    top: 89.351852%;
+    flex-shrink: 0;
+
+    border: none;
+
     text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 1.0vw;
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+    line-height: normal;
+
+    cursor: pointer;
 }
 
-#nuiLevelWhitelist .backScreen button:hover {
-    background-color: #07da00d5;
-	box-shadow: 0 0 0.5vw #07da00d5;
-	cursor: pointer;
+#nuiLevelWhitelist .whiteListScreen button.whitelistApproved {
+    box-shadow: 0 0 1.0vw green;
 }
 
-#nuiLevelWhitelist .backScreen .whitelistWaitButton:hover {
+#nuiLevelWhitelist .whiteListScreen button.whitelistWaitButton {
+    box-shadow: 0 0 1.0vw yellow;
+}
+
+#nuiLevelWhitelist .whiteListScreen button.whitelistReprove {
+    box-shadow: 0 0 1.0vw red;
+}
+
+#nuiLevelWhitelist .whiteListScreen button.whitelistApproved:hover, #nuiLevelWhitelist .whiteListScreen button.whitelistWaitButton:hover {
 	cursor: wait;
 }
 
-#nuiLevelWhitelist .backScreen .whitelistReprove:hover {
+#nuiLevelWhitelist .whiteListScreen button.whitelistReprove:hover {
 	cursor: not-allowed;
 }
 
-#nuiLevelWhitelist .backScreen .quizBox {
-	position: absolute;
-	width: 40%;
-    height: 20%;
-	top: 40%;
-	left: 30%;
-	
-	background-color: rgba(255, 255, 255, 0.238);
-	border-radius: 2.0vw 2.0vw 0.0vw 0.0vw;
-    border: solid white;
-	box-shadow: 0 0 0.5vw white;
+#nuiLevelWhitelist #fivem .whiteListScreen button {
+    border-radius: 1.2667vw;
+    background: linear-gradient(270deg, white 0%, #DCDCDC 100%);
 
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 1.0vw;
+    color: #2C67BF;
+    font-family: "Futuru";
+    font-size: 1.1168vw;
+    font-weight: 300;
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen button {
+    border-radius: 0.1042vw;
+    background: linear-gradient(270deg, #998C83 0%, #D0C9C4 100%);
+
+    color: #2C231B;
+    font-family: "Gloria Hallelujah";
+    font-size: 1.0054vw;
+    font-weight: 400;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen button:hover {
+    border-radius: 1.2667vw;
+    background: linear-gradient(270deg, #1FA5DE 0%, #2C67BF 100%), white;
+    color: white;
+}
+#nuiLevelWhitelist #redm .whiteListScreen button:hover {
+    border-radius: 0.1042vw;
+    background: linear-gradient(90deg, #7C4721 0%, #9F6338 77.5%, #E17B32 100%), linear-gradient(90deg, #AE6530 0%, #CA9847 100%);
+    color: white;
+}
+
+#nuiLevelWhitelist .whiteListScreen button #text {
+    transform: translate(50%,50%);
+}
+
+#nuiLevelWhitelist .whiteListScreen button #text {
+    transform: translate(50%,50%);
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox {
+	position: absolute;
+	width: 36.458333%;
+    height: 64.814815%;
+
+    left: 32.708333%;
+    top: 18.425926%;
+
+    color: white;
+    leading-trim: Cap height;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    
 
 	display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    align-items: start;
     gap: 2.5%;
 
-	overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    text-shadow: 0.0521vw 0.0521vw 0.1563vw black;
 }
 
-#nuiLevelWhitelist .backScreen .questionText {
-    border: solid white;
-    border-width: 0.2vw 0.0vw 0.0vw 0.0vw;
-    
-    align-items: center;
-    justify-content: center;
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox {
+    font-family: "Futuru";
+    font-weight: 900;
+    font-size: 1.2401vw;
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox {
+    font-family: "Give You Glory";
+    font-size: 1.3021vw;
+    font-weight: 400;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox::-webkit-scrollbar {
+    position: relative;
+	width: 0.428571%;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 0.2083vw;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox::-webkit-scrollbar-thumb {
+
+    height: 0.0001vw;
+	border-radius: 0.2083vw;
+	opacity: 0.49;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FFAD5B 0%, #B55400 100%), white;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionText {
+    position: relative;
+    width: 100%;
     text-align: center;
-
-	padding: 1% 0% 0% 0%;
+    margin: 0 auto;
 }
 
-#nuiLevelWhitelist .backScreen .questionText:first-child {
-    border: none;
-}
-
-#nuiLevelWhitelist .backScreen .questionBox {
-	display: flex;
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    align-items: start;
+    gap: 2.999vh;
 
 	font-size: 0.7vw;
 	padding: 0% 0% 0% 2%;
 }
 
-#nuiLevelWhitelist .backScreen .questionBox textarea{
-    width: 37.5vw;
-    height: 6vw;
-    font-size: 150%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 0.1rem solid rgba(0,0,0,1);
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox textarea {
+    position: relative;
+    width: 95.12194%;
+    height: 24.079vh;
 
-    /* white-space: nowrap; */
-    overflow: hidden;
+    border-radius: 0.7016vw;
+    border-width: 0.0495vw;
+    background-color: rgba(55, 55, 55, 0.20);
+    border: 0.0495vw solid #646464;
+
     resize: none;
+    overflow: hidden;
 
-    caret-color: black;
-    color: rgb(255, 255, 255);
-    font-family: 'Arial', cursive;
-    text-shadow: 0.104vw 0 0 rgb(0, 0, 0), -0.104vw 0 0 rgb(0, 0, 0), 0 0.104vw 0 rgb(0, 0, 0), 0 -0.104vw 0 rgb(0, 0, 0), 0.052vw 0.052vw rgb(0, 0, 0), -0.052vw -0.052vw 0 rgb(0, 0, 0), 0.052vw -0.052vw 0 rgb(0, 0, 0), -0.052vw 0.052vw 0 rgb(0, 0, 0);
-    font-size: 1.0vw;
+    color: white;
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+    line-height: normal;
 }
 
-#nuiLevelWhitelist .backScreen .questionBox:last-child {
-	padding: 0% 0% 1% 2%;
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox .questionBox textarea {
+    font-family: "Futuru";
+    font-size: 0.9923vw;
+    font-weight: 300;
 }
 
-#nuiLevelWhitelist .question-checkbox {
-    position: absolute;
-    left: -9999px;
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox .questionBox textarea {
+    font-family: "Gloria Hallelujah";
+    font-size: 0.8854vw;
+    font-weight: 400;
 }
 
-#nuiLevelWhitelist .question-checkbox {
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox #charCount {
+    position: relative;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox .questionBox #charCount {
+    font-size: 0.625vw;
+    top: -23%;
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox .questionBox #charCount {
+    font-size: 0.8333vw;
+    top: -22%;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox .checkbox-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1.142857%;
+
+    color: white;
+    leading-trim: both;
+    text-edge: cap;
+    font-style: normal;
+    line-height: normal;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox .questionBox .checkbox-label {
+    font-family: "Futuru";
+    font-size: 1.0938vw;
+    font-weight: 300;
+}
+
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox .questionBox .checkbox-label {
+    font-family: "Gloria Hallelujah";
+    font-size: 0.8854vw;
+    font-weight: 400;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox .checkbox-label .question-checkbox {
     display: none;
 }
 
-#nuiLevelWhitelist .checkbox-label {
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox .checkbox-label .custom-checkbox {
     position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+
+    width: 2.729vw;
+    height: 4.851vh;
+    flex-shrink: 0;
+    
+    border-radius: 0.7016vw;
+    background-color: rgba(55, 55, 55, 0.20);
+    border: 0.0495vw solid #646464;
 }
 
-#nuiLevelWhitelist .checkbox-label::before {
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox .checkbox-label .question-checkbox:checked + .custom-checkbox {
+    background-color: rgba(55, 55, 55, 0.20);
+    border: 0.0495vw solid #646464;
+}
+
+#nuiLevelWhitelist .whiteListScreen .quizBox .questionBox .checkbox-label .question-checkbox:checked + .custom-checkbox::after {
     content: '';
-    display: inline-block;
-    width: 1.0vw;
-    height: 1.0vw;
-    background-color: #fff;
-    border: 0.15vw solid #000;
-    border-radius: 0.208vw;
-    margin-right: 0.52vw;
+    position: absolute;
+    inset: 0;
 }
 
-#nuiLevelWhitelist .question-checkbox:checked + .checkbox-label::before {
-    content: '\2713';
-    font-size: 0.83vw;
-    color: #1eff00;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+#nuiLevelWhitelist #fivem .whiteListScreen .quizBox .questionBox .checkbox-label .question-checkbox:checked + .custom-checkbox::after {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='66' height='61' viewBox='0 0 66 61' fill='none'><g filter='url(%23filter0_d_256_686)'><path d='M41.7585 20L28.5106 32.8185L24.214 28.6612L20 32.7386L24.2966 36.8959L28.5381 41L32.7521 36.9226L46 24.1041L41.7585 20Z' fill='%231FA5DE'/></g><defs><filter id='filter0_d_256_686' x='0' y='0' width='66' height='61' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'><feFlood flood-opacity='0' result='BackgroundImageFix'/><feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/><feOffset/><feGaussianBlur stdDeviation='10'/><feComposite in2='hardAlpha' operator='out'/><feColorMatrix type='matrix' values='0 0 0 0 0.121569 0 0 0 0 0.647059 0 0 0 0 0.870588 0 0 0 0.8 0'/><feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_256_686'/><feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_256_686' result='shape'/></filter></defs></svg>") no-repeat center / contain;
 }
 
-#nuiLevelWhitelist *::-webkit-scrollbar {
-    width: 0.8vw;
-    border-radius: 2.0vw;
-}
-
-#nuiLevelWhitelist *::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    border-radius: 2.0vw;
-    border: solid black;
-}
-
-#nuiLevelWhitelist *::-webkit-scrollbar-button,
-#nuiLevelWhitelist *::-webkit-scrollbar-corner { 
-	background: transparent;
+#nuiLevelWhitelist #redm .whiteListScreen .quizBox .questionBox .checkbox-label .question-checkbox:checked + .custom-checkbox::after {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='66' height='61' viewBox='0 0 66 61' fill='none'><g filter='url(%23filter0_d_641_631)'><path d='M41.7585 20L28.5106 32.8185L24.214 28.6612L20 32.7386L24.2966 36.8959L28.5381 41L32.7521 36.9226L46 24.1041L41.7585 20Z' fill='url(%23paint0_linear_641_631)'/></g><defs><filter id='filter0_d_641_631' x='0' y='0' width='66' height='61' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'><feFlood flood-opacity='0' result='BackgroundImageFix'/><feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/><feOffset/><feGaussianBlur stdDeviation='10'/><feComposite in2='hardAlpha' operator='out'/><feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 0.678431 0 0 0 0 0.356863 0 0 0 0.8 0'/><feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_641_631'/><feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_641_631' result='shape'/></filter><linearGradient id='paint0_linear_641_631' x1='33' y1='20' x2='33' y2='41' gradientUnits='userSpaceOnUse'><stop stop-color='%23FFAD5B'/><stop offset='1' stop-color='%23B55400'/></linearGradient></defs></svg>") no-repeat center / contain;
 }

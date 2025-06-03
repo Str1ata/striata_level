@@ -1,7 +1,7 @@
 {
     "scriptConfig": {
         "itensImages": "http://189.84.253.94/inventory/",
-        "vehiclesImages": "http://189.84.253.94/alphavehs/",
+        "vehiclesImages": "http://189.84.253.94/vehicles/",
         "webhookLevelUp": "",
         "webhookLevelRewards": "",
         "webhookLevelRewardsExpiration": "",
@@ -9,6 +9,8 @@
         "expirationSystem": true,
         "timeCheckExpiration": 1,
         "rewardNotifyTime": 60,
+        "useGameLevelBar" : false,
+        "useNuiLevelBar" : true,
         "logoDesactiveActive": "iron:desactivelogo",
         "logoActive": "iron:activelogo",
         "eventChatAddMessage": "chat:addMessage",
@@ -18,10 +20,11 @@
         "clientEvents": [],
         "serverEvents": [],
         "whiteListSystem": true,
+        "checkPlayerIsDiscordMember": true,
         "whiteListMode": "QuestionsAndInterview",
         "whiteListPercent": 60,
         "whiteListTimeToNew": 30,
-        "requsetStory": true,
+        "requestStory": true,
         "storyMinLength": 504,
         "whiteListQuestions": [
             {
@@ -85,16 +88,17 @@
             }
         ],
         "salaryMode": true,
+        "paySalaryInHands": false,
         "salary": {
-            "Policia": {
-                "onServiceGroup": "policia.permissao",
-                "outServiceGroup": "",
-                "payment": 10000
-            },
             "Prefeitura": {
                 "onServiceGroup": "admin.permissao",
                 "outServiceGroup": "",
                 "payment": 3000
+            },
+            "Policia": {
+                "onServiceGroup": "policia.permissao",
+                "outServiceGroup": "",
+                "payment": 10000
             }
         },
         "randomCars": [
@@ -111,7 +115,8 @@
                 "randomCar": false,
                 "group": "cidadao",
                 "permissions": [],
-                "money": 5000,
+                "handMoney": 0,
+                "bankMoney": 5000,
                 "specifyCars": [
                     "faggio"
                 ],
@@ -126,9 +131,9 @@
                     }
                 ],
                 "playerChoice": {
-                    "itensAmout": 0,
+                    "itensAmount": 0,
                     "itens": [],
-                    "vehiclesAmout": 0,
+                    "vehiclesAmount": 0,
                     "vehicles": []
                 },
                 "expiration": false,
@@ -139,10 +144,11 @@
                 "randomCar": false,
                 "group": "",
                 "permissions": [],
-                "money": 0,
+                "handMoney": 0,
+                "bankMoney": 0,
                 "specifyCars": [],
                 "playerChoice": {
-                    "itensAmout": 2,
+                    "itensAmount": 2,
                     "itens": [
                         {
                             "item": "celular",
@@ -161,7 +167,7 @@
                             "amount": 1
                         }
                     ],
-                    "vehiclesAmout": 1,
+                    "vehiclesAmount": 1,
                     "vehicles": [
                         "panto",
                         "brioso"
@@ -174,14 +180,15 @@
             {
                 "curLevel": 3,
                 "randomCar": false,
-                "group":  "",
+                "group": "",
                 "permissions": [],
-                "money": 10000,
+                "handMoney": 0,
+                "bankMoney": 10000,
                 "specifyCars": [],
                 "playerChoice": {
-                    "itensAmout": 0,
+                    "itensAmount": 0,
                     "itens": [],
-                    "vehiclesAmout": 0,
+                    "vehiclesAmount": 0,
                     "vehicles": []
                 },
                 "itens": [
@@ -219,7 +226,8 @@
             "rewardsRandomVehicle": "Veiculo aleatório:",
             "rewardsGroup": "Grupo:",
             "rewardsVehicle": "Veiculo específico:",
-            "rewardsMoney": "Dinheiro:",
+            "rewardsHandMoney": "Dinheiro na carteira:",
+            "rewardsBankMoney": "Dinheiro no banco:",
             "rewardsItem": "Item:",
             "rewardsFor": "Por",
             "rewardsDays": "Dias",
@@ -249,11 +257,11 @@
             "vehicle": "Veiculo:",
             "group": "Grupo:",
             "expireDate": "Expira em:",
+            "minute": "Minuto:",
+            "hour": "Hora:",
             "day": "Dia:",
             "month": "Mês:",
             "year": "Ano:",
-            "minute": "Minuto:",
-            "hour": "Hora:",
             "redeemedThePrizes": "Você resgatou os prêmios!",
             "NeedMarkPrizes": "Você deve selecionar o número de prêmios especificados!",
             "NeedMarkAllQuestions": "Por favor, responda a todas as questões antes de finalizar o questionário.",
@@ -268,19 +276,27 @@
         },
         "nui": {
             "whiteListError": "Erro ao obter sua aprovação na whitelist, contate a staff!",
-            "welcomeToServer": "Bem-vindo a striata shop!",
+            "welcomeToServer": "Bem vindo a<br><span>striata city</span>",
             "TakeTheQuiz": "Responda o questionário abaixo!",
-            "clickToAproved": "Clique aqui para ser aprovado!",
-            "clickToStart": "Clique aqui para iniciar o questionário!",
-            "clickToFinish": "Clique aqui para finalizar o questionário!",
+            "clickToApproved": "Clique para ser aprovado!",
+            "clickToStart": "Iniciar Questionário!",
+            "clickToFinish": "Finalizar questionário!",
             "wait": "Aguarde um momento...",
             "waitInterviewResponse": "Aguardando a aprovação na entrevista...",
-            "waitInterview": "Você foi aprovado no questionario mas deve entrar em nosso discord e realizar uma entrevista!",
-            "aproved": "Você foi aprovado",
-            "reproved": "Você foi reprovado, leia as regras e tente novamente!",
-            "newAtempt": "Você pode tentar novamente em",
+            "waitInterview": "Você foi aprovado no questionario<br><span>mas deve entrar em nosso discord e realizar uma entrevista!</span>",
+            "approved": "Você foi aprovado",
+            "reproved": "Você foi reprovado<br><span>leia as regras e tente novamente!</span>",
+            "newAttempt": "Você pode tentar novamente em",
             "minutes": "minutos",
-            "story": "Escreva a historia do seu personagem..."
+            "story": "Escreva a historia do seu personagem:",
+            "choose": "Você pode escolher",
+            "chooseItems": "dos itens abaixo",
+            "chooseVehicles": "dos veiculos abaixo",
+            "select": "Selecionar",
+            "selected": "Selecionado",
+            "ransom": "Resgatar",
+            "currentLevel": "Nível atual",
+            "nextLevel": "Proximo nível"
         }
     },
     "languageENUS": {
@@ -303,7 +319,8 @@
             "rewardsRandomVehicle": "Random vehicle:",
             "rewardsGroup": "Group:",
             "rewardsVehicle": "Specific vehicle:",
-            "rewardsMoney": "Money:",
+            "rewardsHandMoney": "Hand money:",
+            "rewardsBankMoney": "Bank money:",
             "rewardsItem": "Item:",
             "rewardsFor": "For",
             "rewardsDays": "Days",
@@ -333,11 +350,11 @@
             "vehicle": "Vehicle:",
             "group": "Group:",
             "expireDate": "Expires on:",
+            "minute": "Minute:",
+            "hour": "Hour:",
             "day": "Day:",
             "month": "Month:",
             "year": "Year:",
-            "minute": "Minute:",
-            "hour": "Hour:",
             "redeemedThePrizes": "You have redeemed the prizes!",
             "NeedMarkPrizes": "You must select the specified number of prizes!",
             "NeedMarkAllQuestions": "Please answer all questions before finishing the questionnaire.",
@@ -348,23 +365,31 @@
         "console": {
             "startLevelMensage1": "Unidentified reward system, Creating...",
             "startLevelMensage2": "Reward system created in the database!",
-            "startLevelError": "Error in the reward system, please relog! If it persists, contact the DEV team!!"
+            "startLevelError": "Error in the reward system, please reconnect! If it persists, contact the DEV team!!"
         },
         "nui": {
             "whiteListError": "Error obtaining your whitelist approval, contact staff!",
-            "welcomeToServer": "Welcome to striata shop!",
+            "welcomeToServer": "Welcome to<br><span>striata city</span>",
             "TakeTheQuiz": "Answer the questionnaire below!",
-            "clickToAproved": "Click here to be approved!",
-            "clickToStart": "Click here to start the questionnaire!",
-            "clickToFinish": "Click here to finish the questionnaire!",
+            "clickToApproved": "Click to be approved!",
+            "clickToStart": "Start questionnaire!",
+            "clickToFinish": "Finish questionnaire!",
             "wait": "Please wait...",
             "waitInterviewResponse": "Waiting for approval in the interview...",
             "waitInterview": "You passed the questionnaire but should join our discord and conduct an interview!",
-            "aproved": "You have been approved",
+            "approved": "You have been approved",
             "reproved": "You have been disapproved, read the rules and try again!",
-            "newAtempt": "You can try again in",
+            "newAttempt": "You can try again in",
             "minutes": "minutes",
-            "story": "Write your character's story..."
+            "story": "Write your character's story:",
+            "choose": "You can choose",
+            "chooseItems": "from the items below",
+            "chooseVehicles": "from the vehicles below",
+            "select": "Select",
+            "selected": "Selected",
+            "ransom": "Ransom",
+            "currentLevel": "Current level",
+            "nextLevel": "Next level"
         }
     }
 }
