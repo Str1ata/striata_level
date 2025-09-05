@@ -88,7 +88,6 @@
             }
         ],
         "salaryMode": true,
-        "paySalaryInHands": false,
         "salary": {
             "Prefeitura": {
                 "onServiceGroup": "admin.permissao",
