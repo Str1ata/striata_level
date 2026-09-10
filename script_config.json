@@ -1,7 +1,7 @@
 {
     "scriptConfig": {
-        "itensImages": "http://189.84.253.94/inventory/",
-        "vehiclesImages": "http://189.84.253.94/vehicles/",
+        "itensImages": "http://132.255.95.49/inventory/",
+        "vehiclesImages": "http://132.255.95.49/vehicles/",
         "webhookLevelUp": "",
         "webhookLevelRewards": "",
         "webhookLevelRewardsExpiration": "",
